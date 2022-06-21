@@ -12,4 +12,5 @@
 .profile-header h2 {
   position: relative;
   bottom: 30px;
+  font-style: italic;
 }

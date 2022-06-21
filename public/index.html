@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
   <!-- Fonts CSS-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,21 +56,17 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <h1>
-      <p>
-        Hello, I am Colleen. 
-      </p>
-    </h1>
-    <h2>
-      <p>
-        HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO.
-      </p>
-    </h2>
-    <h3>
-      <p>
-        The cab arrived late. The inside was in as bad of shape as the outside which was concerning, and it didn't appear that it had been cleaned in months. The green tree air-freshener hanging from the rearview mirror was either exhausted of its scent or not strong enough to overcome the other odors emitting from the cab. The correct decision, in this case, was to get the hell out of it and to call another cab, but she was late and didn't have a choice. 
-      </p>
-    </h3>
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form action="/tweets/" method="POST">
+        <textarea name="text" placeholder="What are you humming about?"></textarea>
+        <button type="submit">Tweet</button>
+        <output name="counter" class="counter" for="tweet-text">140</output>
+      </form>
+    </section>
+    <footer>
+      <p>Copyright &copy; 2022 Colleen Garvey.</p>
+    </footer>
   </main>
 </body>
 

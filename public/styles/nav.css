@@ -25,7 +25,7 @@ nav .new-msg {
 }
 button {
   display: flex;
-  color: rgb(255, 234, 73);
+  color: rgb(73, 255, 125);
   background-color: transparent;
   border: none;
   padding: 5px;
