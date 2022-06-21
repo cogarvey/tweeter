@@ -13,16 +13,20 @@ nav {
   justify-content: space-between;
 }
 
+/* TWEETER LOGO/NAME */
 nav #logo {
   font-family: 'Bungee', sans-serif;
   display: flex;
   font-size: 60px;
 }
 
+/* WRITE NEW TEXT MESSAGE */
 nav .new-msg {
   display: flex;
   flex-direction: column;
 }
+
+/* ARROW BUTTON */
 button {
   display: flex;
   color: rgb(73, 255, 125);

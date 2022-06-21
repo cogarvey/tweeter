@@ -21,6 +21,7 @@ body {
   font-size: 24px;
 }
 
+/* CONTAINS COMPOSE TWEET CONTAINER */
 main {
   width: 90%;
   margin: auto;
@@ -28,6 +29,3 @@ main {
   top: 120px;
   color: #545149;
 }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */

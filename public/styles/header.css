@@ -1,3 +1,4 @@
+/* PROFILE BACKGROUND, IMAGE AND FORMATTING */
 .profile-header {
   height: 400px;
   width: 100%;
@@ -9,6 +10,8 @@
   justify-content: center;
   margin-top: 120px;
 }
+
+/* PROFILE NAME */
 .profile-header h2 {
   position: relative;
   bottom: 30px;
