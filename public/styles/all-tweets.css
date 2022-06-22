@@ -1,0 +1,70 @@
+/* A TWEET BOX*/
+.all-tweets {
+  border: 5px solid black;
+  margin: 40px 0;
+  padding: 20px;
+}
+
+/* USER PROFILE IMG */
+.all-tweets img {
+  width: 65px;
+  margin: 5px;
+}
+
+/* TWEET HEADER */
+.all-tweets header {
+  display: flex;
+  align-items: center;
+}
+
+/* USER NAME */
+.profile-name {
+  font-weight: 350;
+}
+
+/* USER HANDLE -- @ */
+.profile-handle{
+  font-weight: 350;
+  margin-left: auto;
+  margin-right: 2em;
+}
+
+/* TWEET TEXT */
+.text {
+  padding: 1em 1em 1em;
+  border-bottom: 4px solid black;
+  font-weight: 350;
+  word-wrap: break-word;
+}
+
+/* FOOTER -- TIMESTAMP AND ICONS */
+.post-time{
+  font-size: 1.5em;
+}
+
+/* FOOTER ICONS */
+.post-icon{
+  font-size: 1.5em;
+  float: right;
+}
+
+/* INDIVIDUAL ICONS IN FOOTER */
+.post-icon i {
+  padding: 0 4px;
+}
+
+/* HOVERING OVER A TWEET -- ADDS SHADOW */
+.all-tweets:hover {
+  box-shadow: 8px 6px darkgray;
+}
+
+/* HOVERING OVER A TWEET -- SHOW ICONS IN FOOTER */
+.fa-flag:hover {
+  color: rgb(73, 255, 125);
+}
+.fa-retweet:hover {
+  color: rgb(73, 255, 125);
+}
+.fa-heart:hover {
+  color: rgb(73, 255, 125);
+}
