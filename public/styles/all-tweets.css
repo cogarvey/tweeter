@@ -2,7 +2,7 @@
 .all-tweets {
   border: 5px solid black;
   margin: 40px 0;
-  padding: 20px;
+  padding: 10px;
 }
 
 /* USER PROFILE IMG */
@@ -39,11 +39,12 @@
 
 /* FOOTER -- TIMESTAMP AND ICONS */
 .post-time{
-  font-size: 1.5em;
+  font-size: 1.8em;
 }
 
 /* FOOTER ICONS */
 .post-icon{
+  padding: 0.5em;
   font-size: 1.5em;
   float: right;
 }
