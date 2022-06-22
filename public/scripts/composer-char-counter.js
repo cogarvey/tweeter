@@ -6,18 +6,18 @@ $(document).ready(function() {
     // LENGTH OF WHAT IS BEING WRITTEN
     let tweetLengthCounter = $(this).val().length;
 
+    // CHECK REMAINING CHARACTERS
+    let remainingCharacters = 140 - tweetLengthCounter;
+
     // CHECK THE REMAINING ONCE CHARACTERS USED
-    let counterRemain = $(this).siblings('.counter');
+    let counter = $(this).siblings('.counter');
+    counter.text(remainingCharacters);
 
-    // CHARACTER LIMIT
-    let tweetLimit = 140;
-
-    // CHECK LENGTHS AND COMPARE
-    if (tweetLengthCounter > tweetLimit) {
-      counterRemain.addClass('tweetIsTooLong');
-    } else if (tweetLengthCounter <= tweetLimit) {
-      counterRemain.removeClass('tweetIsTooLong');
+    // CHECK LENGTHS AND COMPARE FOR RED FONT
+    if (remainingCharacters < 0) {
+      counter.addClass('tweetIsTooLong');
+    } else {
+      counter.removeClass('tweetIsTooLong');
     }
-    counterRemain.text(tweetLimit - tweetLengthCounter);
   });
 });
