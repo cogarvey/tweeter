@@ -8,47 +8,18 @@
 // takes in a tweet object and returns a tweet article 
 $(document).ready(function() {
 
-  
-  // Fake data taken from initial-tweets.json
-  const tweetData = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-        "content": {
-          "text": "Je pense , donc je suis"
-        },
-        "created_at": 1461113959088
-      }
-    ]
-    
-    
-    const renderTweets = function(tweets) {
-      // loops through tweets
-      // calls createTweetElement for each tweet
-      // takes return value and appends it to the tweets container
-      // $('.tweet-column').empty();
-      for (let tweet of tweets) {
-        $('.tweet-column').append(createTweetElement(tweet))
-      }
+  const renderTweets = function(tweets) {
+    // remove duplicates
+    $('.tweet-column').empty();
+    // loop through tweets and prepend them
+    for (let tweet of tweets) {
+      $('.tweet-column').prepend(createTweetElement(tweet));
     }
-    
-    
-    const createTweetElement = function(data) {
-      let $tweet = $(`
+  };
+
+
+  const createTweetElement = function(data) {
+    let $tweet = $(`
       <article class="all-tweets">
       <header>
       <img src=${data.user.avatars}>
@@ -69,29 +40,46 @@ $(document).ready(function() {
       </footer>
       </article>
       `);
-      return $tweet;
+    return $tweet;
+  };
+  let loadTweets = function() {
+    $.ajax('/tweets', {
+      method: 'GET',
+      dataType: 'JSON',
+      success: tweets => renderTweets(tweets),
+      error: (data, text, error) => console.error("There is an error: ", error)
+    });
+  };
+  loadTweets();
+
+  
+
+  
+  $('form').submit(function(event) {
+    event.preventDefault();
+
+    let textInput = $(".tweet-area").val();
+
+    if (!textInput) {
+      console.log("There is no text!")
+      return("There is no text!");
     }
-    
+    if (textInput.length > 140) {
+      console.log("Tweet exceeds maximum character length")
+      return("Tweet exceeds maximum character length");
+    }
 
-
-    /////////////////// TESTER /////////////////////
-    // const tweetData = {
-    //   "user": {
-    //     "name": "Newton",
-    //     "avatars": "https://i.imgur.com/73hZDYK.png",
-    //     "handle": "@SirIsaac"
-    //   },
-    //   "content": {
-    //     "text": "If I have seen further it is by standing on the shoulders of giants"
-    //   },
-    //   "created_at": 1461116232227
-    // }
-    
-    // const $tweet = createTweetElement(tweetData);
-    
-    // // Test / driver code (temporary)
-    // // console.log($tweet); // to see what it looks like
-    // // $('.all-tweets').append($tweet);
-    
-    renderTweets(tweetData);
+    $.ajax({
+      method: "POST",
+      url: '/tweets/',
+      data: $(this).serialize()
+    })
+    .then(function(tweet) {
+      loadTweets()
+    })
+    .catch((err) => {
+      console.error("There was an error: ", err)
+    })
   });
+});
+  
