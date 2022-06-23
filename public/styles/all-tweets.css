@@ -23,7 +23,7 @@
 }
 
 /* USER HANDLE -- @ */
-.profile-handle{
+.profile-handle {
   font-weight: 350;
   margin-left: auto;
   margin-right: 2em;
@@ -38,13 +38,13 @@
 }
 
 /* FOOTER -- TIMESTAMP AND ICONS */
-.post-time{
+.post-time {
   font-size: 1.8em;
   padding-bottom: 50px;
 }
 
 /* FOOTER ICONS */
-.post-icon{
+.post-icon {
   padding: 0.5em;
   font-size: 1.5em;
   float: right;

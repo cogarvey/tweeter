@@ -9,7 +9,7 @@
 /* TEXT FIELD FOR NEW TWEET */
 .new-tweet textarea {
   width: 100%;
-  font-weight:  bold;
+  font-weight: bold;
   margin-top: 1em;
   margin-bottom: 1em;
   color: black;
@@ -27,6 +27,7 @@
   background-color: rgb(103, 181, 233);
   margin-top: 7px;
   padding: 6px 10px;
+  border: none;
 }
 
 /* COUNTER.. STARTS AT 140 */
@@ -41,9 +42,9 @@ span.counter {
 span.counter.tweetIsTooLong {
   color: red;
 }
+
 /* ERROR MESSAGE */
 .tweet-error {
-  display: flex;
   justify-content: center;
   flex-direction: column;
   display: none;
@@ -51,15 +52,9 @@ span.counter.tweetIsTooLong {
   margin-bottom: 12px;
   border: solid 4px red;
   color: red;
-  padding: 8px 50px 8px 50px;
+  padding: 8px 50px;
   font-weight: bold;
   font-style: italic;
-}
-
-.fa-triangle-exclamation {
-  padding: 0.5em;
-  font-size: 1.5em;
-  color: red;
 }
 
 /* ADDED SMALL COPYRIGHT AT FOOTER */
