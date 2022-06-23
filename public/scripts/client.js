@@ -8,6 +8,7 @@
 // takes in a tweet object and returns a tweet article 
 $(document).ready(function() {
 
+  // FUNCTION TO PREVENT XSS
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -15,6 +16,7 @@ $(document).ready(function() {
   };
 
 
+  // LOOPS THROUGH TWEETS, REMOVES DUPLICATES
   const renderTweets = function(tweets) {
     // remove duplicates
     $('.tweet-column').empty();
@@ -25,6 +27,7 @@ $(document).ready(function() {
   };
 
 
+  // CREATE TWEET FUNCTION
   const createTweetElement = function(data) {
     let $tweet = $(`
       <article class="all-tweets">
@@ -49,6 +52,8 @@ $(document).ready(function() {
       `);
     return $tweet;
   };
+
+  // TWEET LOADING FUNCTION
   let loadTweets = function() {
     $.ajax('/tweets', {
       method: 'GET',
@@ -59,7 +64,7 @@ $(document).ready(function() {
   };
   loadTweets();
 
-  
+  // TWEET SUBMIT AND ERROR MESSAGES
   $('form').submit(function(event) {
     event.preventDefault();
 
@@ -85,11 +90,6 @@ $(document).ready(function() {
     .catch((err) => {
       console.error("There was an error: ", err)
     });
-
-  // $(this).children().find('textarea').val(' ');
-  // $('.counter').text(140);
   });
 });
   
-
-{/* <script>alert ("oh no!!!");</script> */}

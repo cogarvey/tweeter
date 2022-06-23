@@ -36,6 +36,7 @@ main {
   color: #545149;
 }
 
+/* COMPATABLE WITH PHONES, TABLETS, DESKTOPS */
 @media only screen and (max-width: 768px) {
   nav {
     background-color: transparent;
