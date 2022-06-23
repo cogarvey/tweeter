@@ -82,14 +82,14 @@ $(document).ready(function() {
     $.ajax({
       method: "POST",
       url: '/tweets/',
-      data: $(this).serialize()
+      data: $(this).serialize(),
+      success: () => {
+        loadTweets();
+        $(this).children('textarea').val('');
+        $('.counter').text(140);
+      },
+      error: (data, text, error) => console.error("There is an error: ", error)
     })
-    .then(function(tweet) {
-      loadTweets()
-    })
-    .catch((err) => {
-      console.error("There was an error: ", err)
-    });
   });
 });
   
