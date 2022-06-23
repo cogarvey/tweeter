@@ -67,11 +67,11 @@ $(document).ready(function() {
 
     $('.tweet-error').slideUp();
     if (!textInput) {
-      return $('.tweet-error').text("There is no text, please enter text to tweet!").slideDown();
+      return $('.tweet-error').text("⚠There is no text, please enter text to tweet!⚠").slideDown();
       
     }
     if (textInput.length > 140) {
-      return $('.tweet-error').text("Tweet exceeds maximum character length").slideDown();
+      return $('.tweet-error').text("⚠Tweet exceeds maximum character length⚠").slideDown();
     }
 
     $.ajax({

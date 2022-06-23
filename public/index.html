@@ -48,11 +48,11 @@
     <div class="new-msg">
       <span><strong>Write</strong> a new tweet</span>
       <button type="button">
-        <i id="arrow-button" class="fa-solid fa-angles-down"></i>
+        <i class="fa-solid fa-angles-down"></i>
       </button>
     </div>
   </nav>
-
+  
   <header class="profile-header">
     <div>
       <img src="/images/profile-hex.png">
@@ -67,9 +67,7 @@
   <main class="container">
     <section class="new-tweet">
       <form action="/tweets/" method="POST">
-        <span class="tweet-error">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-        </span>
+        <span class="tweet-error"></span>
         <textarea name="text" class="tweet-area" placeholder="What are you humming about?"></textarea>
         <button class="tweet-button" type="submit">Tweet</button>
         <span class="counter">140</span>
