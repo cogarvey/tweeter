@@ -41,6 +41,26 @@ span.counter {
 span.counter.tweetIsTooLong {
   color: red;
 }
+/* ERROR MESSAGE */
+.tweet-error {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  display: none;
+  text-align: center;
+  margin-bottom: 12px;
+  border: solid 4px red;
+  color: red;
+  padding: 8px 50px 8px 50px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.fa-triangle-exclamation {
+  padding: 0.5em;
+  font-size: 1.5em;
+  color: red;
+}
 
 /* ADDED SMALL COPYRIGHT AT FOOTER */
 footer {

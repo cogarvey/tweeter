@@ -35,8 +35,10 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 
 <body>
@@ -65,32 +67,16 @@
   <main class="container">
     <section class="new-tweet">
       <form action="/tweets/" method="POST">
+        <span class="tweet-error">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </span>
         <textarea name="text" class="tweet-area" placeholder="What are you humming about?"></textarea>
         <button class="tweet-button" type="submit">Tweet</button>
         <span class="counter">140</span>
       </form>
     </section>
     <article class="tweet-column">
-      <!-- <article class="all-tweets"> -->
-        <!-- <header>
-          <img src="images/profile-hex.png">
-          <span class="profile-name">Newton</span>
-          <span class="profile-handle">@SirIsaac</span>
-        </header>
-        <div class="post-message">
-          <div class="text"> His one regret was not studying abroad—on another planet. At 28, he is finally gets a job on Jupiter. It is everything he imagined and more.</div>
-          <div class="border"></div>
-        </div>
-        <footer class="post-info">
-          <span class="post-time">10 days ago</span>
-          <article class="post-icon">
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-          </article>
-        </footer> -->
-        <!-- </article> -->
-      </article>
+    </article>
     <footer>
       <p>Copyright &copy; 2022 Colleen Garvey.</p>
     </footer>

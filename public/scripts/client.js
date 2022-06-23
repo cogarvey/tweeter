@@ -8,6 +8,13 @@
 // takes in a tweet object and returns a tweet article 
 $(document).ready(function() {
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+
   const renderTweets = function(tweets) {
     // remove duplicates
     $('.tweet-column').empty();
@@ -22,16 +29,16 @@ $(document).ready(function() {
     let $tweet = $(`
       <article class="all-tweets">
       <header>
-      <img src=${data.user.avatars}>
-      <span>${data.user.name}</span>
-      <span class="profile-handle">${data.user.handle}</span>
+      <img src=${escape(data.user.avatars)}>
+      <span>${escape(data.user.name)}</span>
+      <span class="profile-handle">${escape(data.user.handle)}</span>
       </header>
       <div class="post-message">
-      <div class="text">${data.content.text}</div>
+      <div class="text">${escape(data.content.text)}</div>
       <div class="border"></div>
       </div>
       <footer class="post-info">
-      <span class="post-time">${timeago.format(data.created_at)}</span>
+      <span class="post-time">${escape(timeago.format(data.created_at))}</span>
       <article class="post-icon">
       <i class="fa-solid fa-flag"></i>
       <i class="fa-solid fa-retweet"></i>
@@ -53,20 +60,17 @@ $(document).ready(function() {
   loadTweets();
 
   
-
-  
   $('form').submit(function(event) {
     event.preventDefault();
 
     let textInput = $(".tweet-area").val();
 
+    $('.tweet-error').slideUp();
     if (!textInput) {
-      console.log("There is no text!")
-      return("There is no text!");
+      return $('.tweet-error').text("There is no text, please enter text to tweet!").slideDown();
     }
     if (textInput.length > 140) {
-      console.log("Tweet exceeds maximum character length")
-      return("Tweet exceeds maximum character length");
+      return $('.tweet-error').text("Tweet exceeds maximum character length").slideDown();
     }
 
     $.ajax({
@@ -79,7 +83,12 @@ $(document).ready(function() {
     })
     .catch((err) => {
       console.error("There was an error: ", err)
-    })
+    });
+
+  // $(this).children().find('textarea').val(' ');
+  // $('.counter').text(140);
   });
 });
   
+
+{/* <script>alert ("oh no!!!");</script> */}
