@@ -9,7 +9,7 @@
 $(document).ready(function() {
 
   // FUNCTION TO PREVENT XSS
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -54,7 +54,7 @@ $(document).ready(function() {
   };
 
   // TWEET LOADING FUNCTION
-  let loadTweets = function() {
+  const loadTweets = function() {
     $.ajax('/tweets', {
       method: 'GET',
       dataType: 'JSON',
@@ -68,12 +68,12 @@ $(document).ready(function() {
   $('form').submit(function(event) {
     event.preventDefault();
 
-    let textInput = $(".tweet-area").val();
+    const textInput = $(".tweet-area").val();
 
     $('.tweet-error').slideUp();
     if (!textInput) {
       return $('.tweet-error').text("⚠There is no text, please enter text to tweet!⚠").slideDown();
-      
+
     }
     if (textInput.length > 140) {
       return $('.tweet-error').text("⚠Tweet exceeds maximum character length⚠").slideDown();
@@ -89,7 +89,6 @@ $(document).ready(function() {
         $('.counter').text(140);
       },
       error: (data, text, error) => console.error("There is an error: ", error)
-    })
+    });
   });
 });
-  
