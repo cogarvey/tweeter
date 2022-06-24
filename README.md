@@ -23,6 +23,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Dependencies
 
+- Body-parser
+- Chance
 - Express
 - Node 5.10.x or above
 
@@ -30,13 +32,18 @@ This repository is the starter code for the project: Students will fork and clon
 ## Screenshots
 
 ![Desktop view of app](https://github.com/cogarvey/tweeter/blob/master/public/docs/Screen%20Shot%202022-06-23%20at%209.18.02%20PM.png?raw=true)
+^ Here's a view of our page in desktop mode!^
 
 ![Mobile/Tablet view of app](https://github.com/cogarvey/tweeter/blob/master/public/docs/Screen%20Shot%202022-06-23%20at%209.18.23%20PM.png?raw=true)
+^Here's a tablet/mobile view of our page!^
 
 ![Tweets](https://github.com/cogarvey/tweeter/blob/master/public/docs/Screen%20Shot%202022-06-23%20at%209.19.51%20PM.png?raw=true)
+^Look at some tweets!^
 
 ## Tech Stack
 
-**Client:** Ajax, chance, jQuery
+**Client:** Ajax, jQuery, Javascript, HTML, CSS
 
-**Server:** Node, Express, bodyparser
+**Server:** Node, Express
+
+I hope you enjoy my Tweeter app! :) 
